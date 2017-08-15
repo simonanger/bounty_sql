@@ -20,10 +20,6 @@ bounty2 = Bounty.new({
 bounty1.save()
 bounty2.save()
 
-bounties = Bounty.all()
-
-bounties_list = bounties.map { |bounty_hash| Bounty.new(bounty_hash) }
-
 binding.pry
 
 nil

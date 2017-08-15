@@ -40,7 +40,7 @@ class Bounty
     db.prepare("all", sql)
     hunters = db.exec_prepared("all", values)
     db.close()
-    return hunters
+    return hunters.map { |bounty_hash| Bounty.new(bounty_hash) }
   end
 
   def Bounty.delete_all()
@@ -79,6 +79,7 @@ class Bounty
     db.prepare("update", sql)
     db.exec_prepared("update", values)
     db.close()
+
   end
 
 end
